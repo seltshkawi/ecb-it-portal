@@ -26562,26 +26562,15 @@ const [showQrModal, setShowQrModal] = useState(false);
                     <Icon name="user-check" className="w-4 h-4" />
                   </div>
                   <div>
-                    <div className="text-[10px] text-slate-400 font-bold">الحساب النشط للتجربة:</div>
+                    <div className="text-[10px] text-slate-400 font-bold">الحساب النشط:</div>
                     <select 
                       value={currentUser.email}
                       onChange={(e) => {
                         const u = usersList.find(usr => usr.email.toLowerCase() === e.target.value.toLowerCase());
-                        if (u) {
-                          setCurrentUser(u);
-                          showToast(`تم التبديل إلى: ${u.name} (${u.roleLabel})`);
-                        }
                       }}
                       className="bg-transparent text-white text-xs font-bold focus:outline-none cursor-pointer max-w-[150px] truncate"
                     >
-                      <option value="sayed.osman@gmail.com" className="text-slate-800">1. م. سيد عثمان (الدعم الفني)</option>
-                      <option value="finance@ecb-consulting.com" className="text-slate-800">2. أ. أحمد فؤاد (الحسابات والمالية)</option>
-                      <option value="chairman@ecb-consulting.com" className="text-slate-800">3. أ.د. رئيس مجلس الإدارة</option>
-                      <option value="sector.head@ecb-consulting.com" className="text-slate-800">4. مدير قطاع المشروعات</option>
-                      <option value="projects.director@ecb-consulting.com" className="text-slate-800">5. مدير عام المشروعات</option>
-                      <option value="ahmed.ibrahim@ecb-consulting.com" className="text-slate-800">6. م. أحمد إبراهيم (مدير مشروع)</option>
-                      <option value="sara.kamal@ecb-consulting.com" className="text-slate-800">7. م. سارة كمال (موظف)</option>
-                    </select>
+                      </select>
                   </div>
                 </div>
 
