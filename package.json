@@ -1,0 +1,12 @@
+{
+  "name": "ecb-it-helpdesk-portal",
+  "version": "1.0.0",
+  "description": "ECB IT Helpdesk and Asset Management Standalone Web Portal",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": ["helpdesk", "assets", "management", "ecb"],
+  "author": "ECB IT Team",
+  "license": "MIT"
+}
