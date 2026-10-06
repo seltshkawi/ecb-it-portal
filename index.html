@@ -26322,7 +26322,7 @@ const [showQrModal, setShowQrModal] = useState(false);
         }
         let cleanPhone = (phone || '').replace(/[^0-9]/g, '');
         if (cleanPhone.startsWith('01')) cleanPhone = '2' + cleanPhone;
-        const msg = encodeURIComponent(`مرحباً م/ ${name || 'الموظف'},\nتم تحديث بيانات حسابك على بوابة ECB Helpdesk بنجاح:\nكلمة المرور الجديدة: ${pwd}\nرابط البوابة: https://ecb-consulting.com`);
+        const msg = encodeURIComponent(`مرحباً م/ ${name || 'الموظف'},\nتم تحديث بيانات حسابك على بوابة ECB Helpdesk بنجاح:\nكلمة المرور الجديدة: ${pwd}\nرابط البوابة: https://seltshkawi.github.io/ecb-it-portal/`);
         window.open(`https://wa.me/${cleanPhone}?text=${msg}`, '_blank');
         showToast("جاري فتح تطبيق الواتساب لإرسال كلمة المرور...");
       };
@@ -26562,7 +26562,22 @@ const [showQrModal, setShowQrModal] = useState(false);
                     <Icon name="user-check" className="w-4 h-4" />
                   </div>
                   <div>
-                    <div className="text-[10px] text-slate-400 font-bold">الحساب النشط:</div>
+                    <div className="text-[10px] text-slate-400 font-bold">الحساب النشط للتجربة:</div>
+                    <select 
+                      value={currentUser.email}
+                      onChange={(e) => {
+                        const u = usersList.find(usr => usr.email.toLowerCase() === e.target.value.toLowerCase());
+                        if (u) {
+                          setCurrentUser(u);
+                          showToast(`تم التبديل إلى: ${u.name} (${u.roleLabel})`);
+                        }
+                      }}
+                      className="bg-transparent text-white text-xs font-bold focus:outline-none cursor-pointer max-w-[150px] truncate"
+                    >
+                      <option value="sayed.osman@gmail.com" className="text-slate-800">1. م. سيد عثمان (الدعم الفني)</option>
+                      
+                    </select>
+                  </div>
                     <select 
                       value={currentUser.email}
                       onChange={(e) => {
